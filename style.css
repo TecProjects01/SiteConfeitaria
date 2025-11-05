@@ -24,6 +24,9 @@ h1 {
 nav ul {
   list-style: none;
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 18px;
 }
 
 nav ul li {
