@@ -1,4 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background-color: darkgoldenrod;
   color: white;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 35px;
+
 }
