@@ -8,6 +8,8 @@ header {
   color: white;
   height: 150px;
   padding-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 header h1 {
