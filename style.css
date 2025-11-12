@@ -45,4 +45,9 @@ img {
 .sobre-nos{
   width:80%;
   text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+.paragrafo{
+  font-size: 20x;
+  text-align: justify;
 }
