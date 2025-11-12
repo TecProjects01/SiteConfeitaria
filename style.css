@@ -41,3 +41,8 @@ img {
   height: 340px;
   object-fit: cover;
 }
+
+.sobre-nos{
+  width:80%;
+  text-align: center;
+}
