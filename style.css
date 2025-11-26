@@ -46,6 +46,10 @@ img {
   text-align: center;
   font-family: "JetBrains Mono", monospace;
 }
+
+.sobre-nos h2{
+  margin-top: 10px;
+}
 .paragrafo{
   font-size: 20x;
   text-align: justify;
@@ -55,7 +59,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .item-cardapio {
