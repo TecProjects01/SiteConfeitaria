@@ -25,7 +25,7 @@ function criarItemCardapio(titulo, descricao, foto) {
 // Função que cria múltiplos itens de cardápio com base nos dados recebidos
 function CriarItensCardapio(itens) {
     itens.forEach(item => {
-        criarItemCardapio(item.titulo, item.descricao, item.foto);
+        criarItemCardapio(titulo, descricao, img-item);
     });
 }
 
