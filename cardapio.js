@@ -21,6 +21,14 @@ function criarItemCardapio(titulo, descricao, foto) {
 
     divC.appendChild(divItemCardapio)
 }
+
+// Função que cria múltiplos itens de cardápio com base nos dados recebidos
+function CriarItensCardapio(itens) {
+    itens.forEach(item => {
+        criarItemCardapio(item.titulo, item.descricao, item.foto);
+    });
+}
+
 // Função para pegar os dados da API
 async function pegarDados() {
     try {
@@ -39,13 +47,6 @@ async function pegarDados() {
     } catch (erro) {
         console.error('Erro ao pegar os dados:', erro);
     }
-}
-
-// Função que cria múltiplos itens de cardápio com base nos dados recebidos
-function CriarItensCardapio(itens) {
-    itens.forEach(item => {
-        criarItemCardapio(item.titulo, item.descricao, item.foto);
-    });
 }
 
 // Chama a função para pegar os dados assim que a página carregar
