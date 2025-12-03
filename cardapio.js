@@ -21,6 +21,32 @@ function criarItemCardapio(titulo, descricao, foto) {
 
     divC.appendChild(divItemCardapio)
 }
-criarItemCardapio('Bolo de Chocolate', 
-    'Um clássico irresístivel', 
-    "https://www.comidaereceitas.com.br/img/sizeswp/1200x675/2020/05/bolo_chocolate_leite.jpg")
+// Função para pegar os dados da API
+async function pegarDados() {
+    try {
+        const url = 'https://confeitariaapi-n7fx.onrender.com/cardapio'; // Substitua pela URL real da sua API
+        const resposta = await fetch(url);
+
+        if (!resposta.ok) {
+            throw new Error('Erro ao buscar os dados');
+        }
+
+        const dados = await resposta.json();
+
+        // Chama a função para criar os itens do cardápio com os dados recebidos
+        CriarItensCardapio(dados);
+
+    } catch (erro) {
+        console.error('Erro ao pegar os dados:', erro);
+    }
+}
+
+// Função que cria múltiplos itens de cardápio com base nos dados recebidos
+function CriarItensCardapio(itens) {
+    itens.forEach(item => {
+        criarItemCardapio(item.titulo, item.descricao, item.foto);
+    });
+}
+
+// Chama a função para pegar os dados assim que a página carregar
+document.addEventListener('DOMContentLoaded', pegarDados);
