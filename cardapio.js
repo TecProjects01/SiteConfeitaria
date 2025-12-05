@@ -25,6 +25,12 @@ function criarItemCardapio(titulo, descricao, foto) {
     divC.appendChild(divItemCardapio);
 }
 
+function CriarItensCardapio(itens) {
+    itens.forEach(item => {
+        criarItemCardapio(item.titulo, item.descricao, item.foto);
+    });
+}
+
 async function pegarDados() {
     try {
         const url = 'https://api.allorigins.win/get?url=https://confeitariaapi-n7fx.onrender.com/cardapio';
