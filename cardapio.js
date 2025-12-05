@@ -25,23 +25,26 @@ function criarItemCardapio(titulo, descricao, foto) {
     divC.appendChild(divItemCardapio);
 }
 
-function CriarItensCardapio(itens) {
-    itens.forEach(item => {
-        criarItemCardapio(item.titulo, item.descricao, item.foto);
-    });
-}
-
 async function pegarDados() {
     try {
-        const url = 'https://confeitariaapi-n7fx.onrender.com/cardapio';
+        const url = 'https://api.allorigins.win/get?url=https://confeitariaapi-n7fx.onrender.com/cardapio';
+        console.log('Iniciando fetch de:', url);
         const resposta = await fetch(url);
 
         if (!resposta.ok) {
             throw new Error(`HTTP ${resposta.status}: ${resposta.statusText}`);
         }
 
-        const dados = await resposta.json();
-        CriarItensCardapio(dados);
+        const resultado = await resposta.json();
+        const dados = JSON.parse(resultado.contents);
+        console.log('Dados recebidos:', dados);
+        
+        if (dados && dados.length > 0) {
+            CriarItensCardapio(dados);
+            console.log('Itens do cardápio criados com sucesso');
+        } else {
+            console.warn('Nenhum dado recebido da API');
+        }
     } catch (erro) {
         console.error('Erro ao pegar os dados:', erro);
     }
