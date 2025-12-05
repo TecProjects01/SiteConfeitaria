@@ -4,9 +4,9 @@
 }
 
 header {
-  background-color: crimson;
+  background-color: #D3D3FF;
   color: white;
-  height: 150px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
